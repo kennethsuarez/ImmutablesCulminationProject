@@ -23,5 +23,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+Route::get('/profile/{user}', [\App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
 Route::post('/posts', [PostController::class, 'store'])->name('posts');
