@@ -10,10 +10,9 @@
             @include ('publish-panel')
 
             <div class="border border-gray-300 rounded-lg">
-                @include ('post')
-                @include ('post')
-                @include ('post')
-                @include ('post')
+                @foreach($posts as $post)
+                    @include('post')
+                @endforeach
             </div>
         </div>
 
