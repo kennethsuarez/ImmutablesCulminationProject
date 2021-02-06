@@ -51,6 +51,14 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
+    public function likesGiven() {
+        return $this->hasMany(Like::class);
+    }
+
+    public function likesReceived() {
+        return $this->hasManyThrough(Like::class, Post::class);
+    }
+
     public function timeline() {
         // Update when flo
         return Post::where('user_id', $this->id)->latest()->get();
