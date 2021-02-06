@@ -8,11 +8,17 @@
 
             </div>
             <div class="col-9 pt-5">
-                <div class="d-flex justify-content-between pb-4 align-items-center">
-                    <div class="font-bold padding"><h1 style="font-size:30px">{{ $user->username }}</h1></div>
-                    <a href="#">Add New Post</a>
-                    <a href="#">Edit Profile</a>
+                <div class="d-flex justify-content-between pb-3 align-items-center">
+                    <div class="font-bold"><h1 style="font-size:30px">{{ $user->username }}</h1></div>
+
+                    @can('update', $user->profile)
+                        <a href="#">Add New Post</a>
+                    @endcan
                 </div>
+
+                @can('update', $user->profile)
+                <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
+                @endcan
 
                 <div class="d-flex">
                     <div class="pr-5"><strong>153</strong> posts</div>
