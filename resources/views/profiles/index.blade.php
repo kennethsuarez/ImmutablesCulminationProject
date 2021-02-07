@@ -25,14 +25,16 @@
                     >Edit Profile</a>
                     @endcan
 
-                    <form method="POST" action="/profile/{{$user->id}}/follow">
-                        @csrf
-                        <button type="submit"
-                            class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-xs" 
-                        >
-                            {{ auth()->user()->following($user)? 'Unfollow' : 'Follow'}}
-                        </button>
-                    </form>
+                    @if(auth()->check() && auth()->user()->id !== $user->id)
+                        <form method="POST" action="/profile/{{$user->id}}/follow">
+                            @csrf
+                            <button type="submit"
+                                class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-xs" 
+                            >
+                                {{ auth()->user()->following($user)? 'Unfollow' : 'Follow'}}
+                            </button>
+                        </form>
+                    @endif
                 </div>
 
                 <div class="d-flex">
