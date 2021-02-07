@@ -12,8 +12,6 @@
                 </div>
                 <div class="form-group row">
                     <label for="title" class="col-md-4 col-form-label">Title</label>
-
-
                     <input id="title"
                            type="text"
                            class="form-control @error('title') is-invalid @enderror"
@@ -29,8 +27,6 @@
                 </div>
                 <div class="form-group row">
                     <label for="description" class="col-md-4 col-form-label">Description</label>
-
-
                     <input id="description"
                            type="text"
                            class="form-control @error('description') is-invalid @enderror"
@@ -46,8 +42,6 @@
                 </div>
                 <div class="form-group row">
                     <label for="url" class="col-md-4 col-form-label">Url</label>
-
-
                     <input id="url"
                            type="text"
                            class="form-control @error('url') is-invalid @enderror"
@@ -63,7 +57,7 @@
                 </div>
                 <div class="row">
                     <label for="Image" class="col-md-4 col-form-label">Profile Image</label>
-                    <input type="file", class="form-control-file" id="image" name="image">
+                    <input type="file" class="form-control-file" id="image" name="image">
                     @error('image')
                     <strong>{{ $message }}</strong>
                     @enderror

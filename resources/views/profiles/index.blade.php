@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-3 pr-5">
-                <img src="https://yt3.ggpht.com/ytc/AAUvwnhbv9F6Du9P6GVUYfap8qBfe2_nUGqH6xm3HE9C3Q=s900-c-k-c0x00ffffff-no-rj" height="150px" class="rounded-circle">
+                <img src="/storage/{{ $user->profile->image }}" height="150px" class="rounded-circle">
 
             </div>
             <div class="col-9 pt-5">
