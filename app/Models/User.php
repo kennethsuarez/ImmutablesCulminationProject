@@ -71,8 +71,9 @@ class User extends Authenticatable
     }
 
     public function timeline() {
-        // Update when flo
-        return Post::where('user_id', $this->id)->latest()->get();
+        $ids = $this->follows->pluck('id'); // return posts of users followed by user
+        $ids->push($this->id); // return own user's post
+        return Post::whereIn('user_id', $ids)->latest()->get();
     }
 
     public function follow(User $user) {
