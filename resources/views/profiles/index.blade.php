@@ -17,9 +17,21 @@
                     @endcan
                 </div>
 
-                @can('update', $user->profile)
-                <a href="/profile/{{ $user->id }}/edit">Edit Profile</a>
-                @endcan
+                <div class="flex mb-2"> 
+                    @can('update', $user->profile)
+                    <a 
+                        class="rounded-full border border-gray-300 py-2 px-4 text-black text-xs mr-2" 
+                        href="/profile/{{ $user->id }}/edit"
+                    >Edit Profile</a>
+                    @endcan
+
+                    <form method="POST" action="/profile/{{$user->id}}/follow">
+                        @csrf
+                        <button type="submit"
+                            class="bg-blue-500 rounded-full shadow py-2 px-4 text-white text-xs" 
+                        >Follow</button>
+                    </form>
+                </div>
 
                 <div class="d-flex">
                     <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> {{Str::plural('post', $user->posts->count())}}</div>
