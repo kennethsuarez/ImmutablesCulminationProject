@@ -63,4 +63,12 @@ class User extends Authenticatable
         // Update when flo
         return Post::where('user_id', $this->id)->latest()->get();
     }
+
+    public function follow(User $user) {
+        return $this->follows()->save($user);
+    }
+    
+    public function follows() {
+        return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
+    }
 }
