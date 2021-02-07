@@ -4,7 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col-3 pr-5">
-                <img src="/storage/{{ $user->profile->image }}" height="150px" class="rounded-circle">
+                
+                <img src="{{ asset('storage/'.$user->profile->image) }}" height="150px" class="rounded-circle">
 
             </div>
             <div class="col-9 pt-5">
@@ -21,8 +22,8 @@
                 @endcan
 
                 <div class="d-flex">
-                    <div class="pr-5"><strong>153</strong> posts</div>
-                    <div class="pr-5"><strong>23k</strong> followers</div>
+                    <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> {{Str::plural('post', $user->posts->count())}}</div>
+                    <div class="pr-5"><strong>{{ $user-> }}</strong> followers</div>
                     <div class="pr-5"><strong>212</strong> following</div>
                 </div>
                 <div class="pt-4 font-weight-bold"> {{ $user->profile->title }} </div>
