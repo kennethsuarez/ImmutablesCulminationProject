@@ -17,7 +17,7 @@
         </div>
 
         <div class="lg:w-1/8">
-            @include ('friends-list')
+            @include ('following-list')
         </div>
     </div>
 @endsection
