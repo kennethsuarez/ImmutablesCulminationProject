@@ -13,5 +13,4 @@
         class = "font-bold text-lg mb-4 block"
         href="/explore"
         >Explore</a></li>
-
 </ul>
