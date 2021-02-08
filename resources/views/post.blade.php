@@ -1,9 +1,9 @@
 <div class="flex p-4 border-b border-b-gray-300" >
     <div class="mr-2" style="flex-shrink:0">
-        <img 
-        src="https://i.pravatar.cc/50?u={{ $post->user->email }}"
+        <img
+        src="{{ $post->user->profile->profileImage() }}"
         alt=""
-        class="rounded-full mr-2"
+        class="rounded-full mr-2 w-20"
     >
 </div>
 
