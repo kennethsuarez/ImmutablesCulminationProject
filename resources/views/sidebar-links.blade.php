@@ -11,8 +11,8 @@
 
     <li><a
         class = "font-bold text-lg mb-4 block"
-        href="/"
-        >Notifications</a></li>
+        href="/explore"
+        >Explore</a></li>
 
     <li><a
         class = "font-bold text-lg mb-4 block"

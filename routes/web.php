@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\LikeController;
+use App\Http\Controllers\ProfilesController;
+use App\Http\Controllers\FollowsController;
+use App\Http\Controllers\ExploreController;
 
 
 Route::get('/', function () {
@@ -31,6 +34,9 @@ Route::post('/posts', [PostController::class, 'store'])->name('posts');
 Route::post('/posts/{post}/likes', [LikeController::class, 'store'])->name('posts.likes');
 Route::delete('/posts/{post}/likes', [LikeController::class, 'destroy'])->name('posts.destroy');
 
-Route::get('/profile/{user}', [\App\Http\Controllers\ProfilesController::class, 'index'])->name('profile.show');
-Route::get('/profile/{user}/edit', [\App\Http\Controllers\ProfilesController::class, 'edit'])->name('profile.edit');
-Route::patch('/profile/{user}', [\App\Http\Controllers\ProfilesController::class, 'update'])->name('profile.update');
+Route::get('/profile/{user}', [ProfilesController::class, 'index'])->name('profile.show');
+Route::get('/profile/{user}/edit', [ProfilesController::class, 'edit'])->name('profile.edit');
+Route::patch('/profile/{user}', [ProfilesController::class, 'update'])->name('profile.update');
+Route::post('/profile/{user}/follow', [FollowsController::class, 'store']);
+
+Route::get('/explore', [ExploreController::class, 'index']);
