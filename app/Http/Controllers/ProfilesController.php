@@ -9,7 +9,11 @@ class ProfilesController extends Controller
 {
     public function index(User $user)
     {
-        return view('profiles.index', compact('user'));
+        $posts = $user->userPosts();
+        return view('profiles.index',
+        compact('user'), [
+            'posts' => $posts,
+        ]);
     }
 
     public function edit(User $user)

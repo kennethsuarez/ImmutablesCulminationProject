@@ -76,6 +76,10 @@ class User extends Authenticatable
         return Post::whereIn('user_id', $ids)->latest()->get();
     }
 
+    public function userPosts() {
+        return Post::where('user_id', $this->id)->latest()->get();
+    }
+
     public function follow(User $user) {
         return $this->follows()->save($user);
     }

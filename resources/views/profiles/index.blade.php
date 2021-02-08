@@ -37,27 +37,21 @@
                     @endif
                 </div>
 
-                <div class="d-flex">
+                <div class="d-flex mb-6">
                     <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> {{Str::plural('post', $user->posts->count())}}</div>
                     <div class="pr-5"><strong>{{ $user->follows->count() }}</strong> followers</div>
                     <div class="pr-5"><strong>{{ $user->follows->count() }}</strong> following</div>
                 </div>
-                <div class="pt-4 font-weight-bold"> {{ $user->profile->title }} </div>
+                <!-- <div class="pt-4 font-weight-bold"> {{ $user->profile->title }} </div>
                 <div>{{ $user->profile->description }}</div>
-                <div><a href="#">{{ $user->profile->url }}</a></div>
+                <div><a href="#">{{ $user->profile->url }}</a></div> -->
             </div>
         </div>
 
-        <div class="row pt-5">
-            <div class="col-4">
-                <img src="https://pbs.twimg.com/media/ERO7sYjXUAAZVAi.jpg" alt="" class="w-100">
-            </div>
-            <div class="col-4">
-                <img src="https://pbs.twimg.com/media/EbyQ51DXgAcA_gs.jpg" alt="" class="w-100">
-            </div>
-            <div class="col-4">
-                <img src="https://sbly-web-prod-shareably.netdna-ssl.com/wp-content/uploads/2020/06/03165105/tucker-1.jpg" alt="" class="w-100">
-            </div>
+        <div class="border border-gray-300 rounded-lg">
+            @foreach($posts as $post)
+                @include('post')
+            @endforeach
         </div>
     </div>
 @endsection
