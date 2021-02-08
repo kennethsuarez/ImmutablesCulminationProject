@@ -39,7 +39,7 @@
 
                 <div class="d-flex mb-6">
                     <div class="pr-5"><strong>{{ $user->posts->count() }}</strong> {{Str::plural('post', $user->posts->count())}}</div>
-                    <div class="pr-5"><strong>{{ $user->follows->count() }}</strong> followers</div>
+                    <div class="pr-5"><strong>{{ $user->followers->count()}}</strong> followers</div>
                     <div class="pr-5"><strong>{{ $user->follows->count() }}</strong> following</div>
                 </div>
                 <!-- <div class="pt-4 font-weight-bold"> {{ $user->profile->title }} </div>
