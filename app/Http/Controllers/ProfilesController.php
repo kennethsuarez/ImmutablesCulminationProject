@@ -28,7 +28,7 @@ class ProfilesController extends Controller
             'url' => 'url',
             'image' => '',
         ]);
-        $imagePath = request('image')->store('profile', 'public');
+        //$imagePath = request('image')->store('profile', 'public');
         // dd($imagePath);
         if (request('image')) {
             $imagePath = request('image')->store('profile', 'public');
