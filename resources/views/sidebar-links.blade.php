@@ -14,8 +14,4 @@
         href="/explore"
         >Explore</a></li>
 
-    <li><a
-        class = "font-bold text-lg mb-4 block"
-        href="/"
-        >Messages</a></li>
 </ul>
