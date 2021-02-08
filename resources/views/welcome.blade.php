@@ -6,13 +6,13 @@
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <title>Laravel</title>
 
-        
+
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen dark:bg-gray-900 sm:items-center sm:pt-0">
             <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
                 <div class="text-center text-8xl font-thin mb-4">
-                    Tweety
+                    <img src="/svg/Tweetylogo.svg">
                 </div>
                 <div class="flex justify-around">
                     @auth
