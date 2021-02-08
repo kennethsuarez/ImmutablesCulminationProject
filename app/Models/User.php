@@ -93,4 +93,5 @@ class User extends Authenticatable
             ->where('following_user_id', $user->id)
             ->exists();
     }
+
 }

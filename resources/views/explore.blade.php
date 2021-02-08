@@ -3,7 +3,7 @@
 @section('content')
     <div>
         @foreach ($users as $user)
-        <div class="flex items-center mb-5">
+        <a href ="/profile/{{ $user->id  }}" class="flex items-center mb-5">
             
             <!-- 
                 <img src="{{$user->avatar}}"
@@ -14,7 +14,7 @@
             <div>
                 <h4 class="font-bold">{{ '@' . $user->username }}</h4>
             </div>
-        </div>
+        </a>
         @endforeach
     </div>
     
